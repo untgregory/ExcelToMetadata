@@ -1,0 +1,36 @@
+<!-- For Prefix -->
+
+<collection xmlns:xsi="http:www.w3.org/2001/XMLSchema-instance">
+
+
+<!-- For Row Template -->
+
+<record xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dctype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/	http://dublincore.org/schemas/xmls/qdc/2008/02/11/dc.xsd http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd http://purl.org/dc/dcmitype/ http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcmitype.xsd http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd">
+
+	{{forNonBlank(cells["Title"], v, '<dc:title>'+v.value.escape("xml")+'</dc:title>', '')}}
+	{{forNonBlank(cells["Creator"], v, '<dc:creator>'+v.value.escape("xml")+'</dc:creator>', '')}}
+	{{forNonBlank(cells["Contributor"], v, '<dc:contributor>'+v.value.escape("xml")+'</dc:contributor>', '')}}
+	{{forNonBlank(cells["Publisher"], v, '<dc:publisher>'+v.value.escape("xml")+'</dc:publisher>', '')}}
+	{{forNonBlank(cells["Date"], v, '<dcterms:created>'+v.value.escape("xml")+'</dcterms:created>', '')}}
+	{{forEach(cells["Subjects"].value.split('; '), v, '<dc:subject>'+v.escape("xml")+'</dc:subject>')}}
+	{{forEach(cells["LCSubjects"].value.split('; '), v, '<dc:subject>'+v.escape("xml")+'</dc:subject>')}}
+	{{forNonBlank(cells["Description"], v, '<dc:description>'+v.value.escape("xml")+'</dc:description>', '')}}
+	{{forNonBlank(cells["Description2"], v, '<dc:description>'+v.value.escape("xml")+'</dc:description>', '')}}
+	{{forNonBlank(cells["Language"], v, '<dc:language>'+v.value.escape("xml")+'</dc:language>', '')}}
+	{{forNonBlank(cells["Format (width x height)"], v, '<dc:format>'+v.value.escape("xml")+'</dc:format>', '')}}
+	{{forNonBlank(cells["Coverage"], v, '<dc:coverage>'+v.value.escape("xml")+'</dc:coverage>', '')}}
+	{{forNonBlank(cells["Subjects (Temporal)"], v, '<dcterms:temporal>'+v.value.escape("xml")+'</dcterms:temporal>', '')}}
+	{{forNonBlank(cells["Subjects (Places)"], v, '<dcterms:spatial>'+v.value.escape("xml")+'</dcterms:spatial>', '')}}
+	{{forNonBlank(cells["Relation"], v, '<dc:relation>'+v.value.escape("xml")+'</dc:relation>', '')}}
+	{{forNonBlank(cells["Type"], v, '<dc:type>'+v.value.escape("xml")+'</dc:type>', '')}}
+	{{forNonBlank(cells["Format"], v, '<dc:format>'+v.value.escape("xml")+'</dc:format>', '')}}
+	{{forNonBlank(cells["Source"], v, '<dc:source>'+v.value.escape("xml")+'</dc:source>', '')}}
+	{{forNonBlank(cells["id"], v, '<dc:identifier>'+v.value.escape("xml")+'</dc:identifier>', '')}}
+	{{forNonBlank(cells["Rights"], v, '<dc:rights>'+v.value.escape("xml")+'</dc:rights>', '')}}
+</record>
+
+<!-- Don't put anything in Row Separator -->
+
+<!-- For Suffix -->
+
+</collection>
